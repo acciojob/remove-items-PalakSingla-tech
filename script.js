@@ -4,5 +4,9 @@ const colorSelect = document.getElementById("colorSelect");
 const removeBtn = document.querySelector('input[type="button"]');
 
 removeBtn.addEventListener("click", function () {
-    colorSelect.remove(colorSelect.selectedIndex);
+    const selectedOption = colorSelect.options[colorSelect.selectedIndex];
+
+    if (selectedOption) {
+        colorSelect.removeChild(selectedOption);
+    }
 });
